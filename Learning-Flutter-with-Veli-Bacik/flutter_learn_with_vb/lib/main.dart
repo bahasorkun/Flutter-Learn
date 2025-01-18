@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_learn_with_vb/101/container_sized_box_learn.dart';
 import 'package:flutter_learn_with_vb/101/text_learn_view.dart';
 
 void main() => runApp(const MyApp());
@@ -8,9 +9,9 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       title: 'Material App',
-      home: TextLearnView(),
+      home: ContainerSizedBoxLearn(),
     );
   }
 }
