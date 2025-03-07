@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:getx_learn_2/controllers/main_controller.dart';
+import 'package:getx_learn_2/screens/second_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -9,7 +12,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
@@ -30,13 +33,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
+  final _mainController = Get.put(MainController());
 
   @override
   Widget build(BuildContext context) {
@@ -52,15 +49,24 @@ class _MyHomePageState extends State<MyHomePage> {
             const Text(
               'You have pushed the button this many times:',
             ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
+            Obx(
+              () => Text(
+                _mainController.counter.value.toString(),
+                style: Theme.of(context).textTheme.headlineMedium,
+              ),
             ),
+            ElevatedButton(
+                onPressed: () => Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) => const SecondScreen(),
+                      ),
+                    ),
+                child: Text("İkinci Ekran'a Git"))
           ],
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
+        onPressed: _mainController.incrementCounter,
         tooltip: 'Increment',
         child: const Icon(Icons.add),
       ),
