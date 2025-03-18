@@ -1,0 +1,2 @@
+/Users/bahasorkun/Documents/GitHub/Flutter-Learn/Weather-App-with-Flutter/minimal_weather_app/android/app/.cxx/Debug/a3s264g6/armeabi-v7a/CMakeFiles/edit_cache.dir
+/Users/bahasorkun/Documents/GitHub/Flutter-Learn/Weather-App-with-Flutter/minimal_weather_app/android/app/.cxx/Debug/a3s264g6/armeabi-v7a/CMakeFiles/rebuild_cache.dir

@@ -1,0 +1,20 @@
+{
+  "buildFiles": [
+    "/Users/bahasorkun/flutter/packages/flutter_tools/gradle/src/main/groovy/CMakeLists.txt"
+  ],
+  "cleanCommandsComponents": [
+    [
+      "/Users/bahasorkun/Library/Android/sdk/cmake/3.22.1/bin/ninja",
+      "-C",
+      "/Users/bahasorkun/Documents/GitHub/Flutter-Learn/Weather-App-with-Flutter/minimal_weather_app/android/app/.cxx/Debug/a3s264g6/x86",
+      "clean"
+    ]
+  ],
+  "buildTargetsCommandComponents": [
+    "/Users/bahasorkun/Library/Android/sdk/cmake/3.22.1/bin/ninja",
+    "-C",
+    "/Users/bahasorkun/Documents/GitHub/Flutter-Learn/Weather-App-with-Flutter/minimal_weather_app/android/app/.cxx/Debug/a3s264g6/x86",
+    "{LIST_OF_TARGETS_TO_BUILD}"
+  ],
+  "libraries": {}
+}

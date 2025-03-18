@@ -1,0 +1,28 @@
+{
+  "buildFiles": [
+    "/Users/bahasorkun/flutter/packages/flutter_tools/gradle/src/main/groovy/CMakeLists.txt"
+  ],
+  "cleanCommandsComponents": [
+    [
+      "/Users/bahasorkun/Library/Android/sdk/cmake/3.22.1/bin/ninja",
+      "-C",
+      "/Users/bahasorkun/Documents/GitHub/Flutter-Learn/Weather-App-with-Flutter/minimal_weather_app/android/app/.cxx/Debug/a3s264g6/armeabi-v7a",
+      "clean"
+    ]
+  ],
+  "buildTargetsCommandComponents": [
+    "/Users/bahasorkun/Library/Android/sdk/cmake/3.22.1/bin/ninja",
+    "-C",
+    "/Users/bahasorkun/Documents/GitHub/Flutter-Learn/Weather-App-with-Flutter/minimal_weather_app/android/app/.cxx/Debug/a3s264g6/armeabi-v7a",
+    "{LIST_OF_TARGETS_TO_BUILD}"
+  ],
+  "libraries": {},
+  "toolchains": {
+    "toolchain": {
+      "cCompilerExecutable": "/Users/bahasorkun/Library/Android/sdk/ndk/26.3.11579264/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang.lld",
+      "cppCompilerExecutable": "/Users/bahasorkun/Library/Android/sdk/ndk/26.3.11579264/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang++.lld"
+    }
+  },
+  "cFileExtensions": [],
+  "cppFileExtensions": []
+}
