@@ -17,4 +17,11 @@ class AuthRepository {
   }) async {
     await auth.signInWithEmailAndPassword(email: email, password: password);
   }
+
+  Future<void> signUpWithEmailAndPassword({
+    required String email,
+    required String password,
+  }) async {
+    await auth.createUserWithEmailAndPassword(email: email, password: password);
+  }
 }

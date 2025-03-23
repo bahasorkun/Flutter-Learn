@@ -21,4 +21,14 @@ class AuthController {
       password: password,
     );
   }
+
+  Future<void> signUpWithEmailAndPassword({
+    required String email,
+    required String password,
+  }) async {
+    return authRepository.signUpWithEmailAndPassword(
+      email: email,
+      password: password,
+    );
+  }
 }

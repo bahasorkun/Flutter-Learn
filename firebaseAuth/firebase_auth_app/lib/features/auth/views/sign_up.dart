@@ -1,18 +1,17 @@
 import 'package:firebase_auth_app/common/colors.dart';
 import 'package:firebase_auth_app/features/auth/controller/auth_controller.dart';
-import 'package:firebase_auth_app/features/auth/views/sign_up.dart';
-import 'package:firebase_auth_app/features/home/views/home.dart';
+import 'package:firebase_auth_app/features/auth/views/sign_in.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class SignIn extends StatefulWidget {
-  const SignIn({super.key});
+class SignUp extends StatefulWidget {
+  const SignUp({super.key});
 
   @override
-  State<SignIn> createState() => _SignInState();
+  State<SignUp> createState() => _SignUpState();
 }
 
-class _SignInState extends State<SignIn> {
+class _SignUpState extends State<SignUp> {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
   final _formKey = GlobalKey<FormState>();
@@ -35,7 +34,7 @@ class _SignInState extends State<SignIn> {
             width: double.infinity,
             decoration: BoxDecoration(
               image: DecorationImage(
-                image: AssetImage('assets/images/signin.png'),
+                image: AssetImage('assets/images/signup.png'),
                 fit: BoxFit.cover,
               ),
             ),
@@ -61,7 +60,7 @@ class _SignInState extends State<SignIn> {
                         padding: EdgeInsets.symmetric(vertical: 10),
                         alignment: Alignment.centerLeft,
                         child: Text(
-                          "Sign In",
+                          "Sign Up",
                           style: TextStyle(color: titleColor, fontSize: 24),
                         ),
                       ),
@@ -116,47 +115,27 @@ class _SignInState extends State<SignIn> {
                               if (_formKey.currentState!.validate()) {
                                 ref
                                     .read(authControllerProvider)
-                                    .signInWithEmailAndPassword(
+                                    .signUpWithEmailAndPassword(
                                       email: _emailController.text,
                                       password: _passwordController.text,
                                     )
                                     .then((value) {
-                                      Navigator.pushAndRemoveUntil(
-                                        context,
-                                        MaterialPageRoute(
-                                          builder: (context) => Home(),
-                                        ),
-                                        (route) => false,
-                                      );
+                                      Navigator.pop(context);
                                     });
                               }
                             },
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(4),
                             ),
-                            color: buttonColor,
+                            color: signpButtonColor,
                             minWidth: double.infinity,
                             height: 40,
                             child: Text(
-                              "Sign In",
+                              "Sign Up",
                               style: TextStyle(color: containerColor),
                             ),
                           );
                         },
-                      ),
-                      Container(
-                        alignment: Alignment.centerLeft,
-                        padding: EdgeInsets.symmetric(vertical: 20),
-                        child: InkWell(
-                          onTap: () {},
-                          child: Text(
-                            "Forgot Password ?",
-                            style: TextStyle(
-                              color: textButtonColor,
-                              fontSize: 14,
-                            ),
-                          ),
-                        ),
                       ),
                       Padding(
                         padding: EdgeInsets.symmetric(vertical: 3),
@@ -164,7 +143,7 @@ class _SignInState extends State<SignIn> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
-                              "Don't have an account ?",
+                              "Do you have an account ?",
                               style: TextStyle(
                                 color: textButtonColor,
                                 fontSize: 12,
@@ -175,14 +154,14 @@ class _SignInState extends State<SignIn> {
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (context) => SignUp(),
+                                    builder: (context) => SignIn(),
                                   ),
                                 );
                               },
                               child: Text(
-                                "Sign Up",
+                                "Sign In",
                                 style: TextStyle(
-                                  color: buttonColor,
+                                  color: titleColor,
                                   fontSize: 12,
                                 ),
                               ),
