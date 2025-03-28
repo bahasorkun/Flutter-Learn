@@ -1,6 +1,10 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+
 class FirestoreService {
   // get collection of notes
-
+  final CollectionReference notes = FirebaseFirestore.instance.collection(
+    'notes',
+  );
   // CREATE : add a new note
 
   // READ : get notes from database
