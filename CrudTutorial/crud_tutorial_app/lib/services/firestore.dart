@@ -6,6 +6,9 @@ class FirestoreService {
     'notes',
   );
   // CREATE : add a new note
+  Future<void> addNote(String note) {
+    return notes.add({'note': note, 'timestamp': Timestamp.now()});
+  }
 
   // READ : get notes from database
 
