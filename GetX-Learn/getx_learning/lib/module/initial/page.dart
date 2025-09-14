@@ -5,6 +5,8 @@ import 'package:lottie/lottie.dart';
 import 'controller.dart';
 
 class InitialPage extends GetView<InitialPageController> {
+  const InitialPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
